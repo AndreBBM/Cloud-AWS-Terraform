@@ -20,10 +20,10 @@ ssh-keygen -t rsa -b 2048 -f ../nome-da-chave
 ``` 
 Também é necessário criar um arquivo de variáveis para a sua base de dados. Para isso, crie um arquivo chamado `secrets.tfvars` no diretório anterior ao do repositório e preencha-o com as seguintes variáveis:
 ```bash
-db_name     = nome-do-banco-de-dados
-db_username = nome-do-usuario-master
-db_password = senha-do-usuario-master
-my_ip       = ip-da-sua-maquina
+db_name     = "nome-do-banco-de-dados"
+db_username = "nome-do-usuario-master"
+db_password = "senha-do-usuario-master"
+my_ip       = "ip-da-sua-maquina"
 ```
 Caso as credencias forem criadas em endereços relativos diferentes, será necessário alterar o caminho para o arquivo ec2.tf e os comandos abaixo.
 Para executar o projeto, execute os seguintes comandos e responda `yes` quando solicitado:
@@ -38,9 +38,12 @@ Para destruir a infraestrutura criada, execute o seguinte comando e responda `ye
 terraform destroy -var-file=../secrets.tfvars
 ```
 ## Estudo de custos
-[Estimativa de custos](Estimativa-de-Custos.pdf)
-Os custos apresentados no arquivo acima foram estimados com base em um uso moderado da aplicação.
+[Estimativa de custos](Estimativa-de-Custos.pdf)  
+Os custos apresentados no arquivo acima foram estimados com base em um uso moderado da aplicação.  
 Para otimizar os custos, uma alternativa seria diminuir o número de portas NAT utilizadas pelo VPC, uma vez que esse elemento representa aproximadamenete 50% do custo total estimado. Além disso, o RDS poderia ter sua capacidade reduzida para o estritamente necessário, visto que este também representa uma parcela significativa do custo total estimado.
+
+## Esquema da arquitetura
+![Esquema da arquitetura](EsquemaFinal.png)
 
 ## Sobre os componentes
 ### VPC
