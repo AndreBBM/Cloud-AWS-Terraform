@@ -25,6 +25,7 @@ db_username = "nome-do-usuario-master"
 db_password = "senha-do-usuario-master"
 my_ip       = "ip-da-sua-maquina"
 ```
+Antes de executar o projeto, é necessário criar manualmente pelo dashboard da aws um bucket no S3 para armazenar o arquivo de estado do Terraform. O nome do bucket deve ser o nome escolhido em "backend 's3'" no arquivo `main.tf`.   
 Caso as credencias forem criadas em endereços relativos diferentes, será necessário alterar o caminho para o arquivo ec2.tf e os comandos abaixo.
 Para executar o projeto, execute os seguintes comandos e responda `yes` quando solicitado:
 ```bash

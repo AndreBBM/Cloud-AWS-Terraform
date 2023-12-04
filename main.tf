@@ -7,7 +7,7 @@ terraform {
   }
   required_version = ">= 1.2.0"
   backend "s3" {
-    bucket         = "bucket-terraform-insper"
+    bucket         = "bucket-andrem"
     key            = "terraform.tfstate"
     region         = "us-east-1"
     encrypt        = true
